@@ -7,12 +7,18 @@ This small extension provides bindings to use the Chromium Compact Language Dete
 
 ## Installation
 
- 1. Checkout Chromium Language Detector from with `hg clone
+ 1. Chcek out cld2 (Compact Language Detector 2) with `svn checkout http://cld2.googlecode.com/svn/trunk/ cld2`
+ 2. `cd cld2/internal`
+ 3. run `chmod +x ./compile_libs.sh` followed by `./compile_libs.sh`
+ 4. `cd ../../`
+ 5. Checkout Chromium Language Detector with `hg clone
     https://code.google.com/p/chromium-compact-language-detector`
- 2. Run `./build.sh`
- 3. Checkout this project
- 4. Run `phpize && ./configure --with-libcld-dir=... && make && sudo make install`
- 5. Add `extension=cld.so` to your `php.ini`
+ 6. `cd chromium-compact-language-detector`
+ 7. Edit both setup.py and setup_full.py: edit CLD2_PATH to point to where you checked out the CLD2 sources.
+ 8. Run `./build.sh`
+ 9. Checkout this project
+ 10. Run `phpize && ./configure --with-libcld-dir=... && make && sudo make install`
+ 11. Add `extension=cld.so` to your `php.ini`
 
 ## Usage
 
